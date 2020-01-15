@@ -29,6 +29,7 @@ public class SecurityController {
 	@PostMapping("/register/save")
 	public String saveUser(Model model, UserAccount user) {
 		user.setPassword(this.bCryptEncoder.encode(user.getPassword()));
+		user.setRole("ROLE_USER");
 		this.accountRepo.save(user);
 		return "redirect:/";
 	}
