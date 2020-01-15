@@ -45,6 +45,6 @@ public class SecurityController {
 		user.setPassword(this.bCryptEncoder.encode(user.getPassword()));
 		user.setRole("ROLE_USER");
 		this.accountRepo.save(user);
-		return "redirect:/";
+		return "redirect:/login";
 	}
 }
