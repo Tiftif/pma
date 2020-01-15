@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="layouts :: header"></head>
-
 <body>
-
+<head th:replace="layouts :: header"></head>
 	<nav th:replace="layouts :: navbar"></nav>
 	
 	<h1 class ="m-5">Create New Employee</h1>
 
 	<div class="container">
 
-		<form th:action="@{/employees/save}" th:object="${employee}"
-			method="POST">
+		<form th:action="@{/employees/save}" th:object="${employee}" method="POST">
 			<div class="form-group">
 				<input class="form-control" type="text"
 					placeholder="Employee Firstname" th:field="${employee.firstName}" required>
